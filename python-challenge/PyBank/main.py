@@ -32,7 +32,6 @@ def pybank(pydata):
     outputfile= os.path.join("output.txt")
     with open(outputfile,'w') as txtfile:
         txtwriter=txtfile.write(results)
-
 #open file 
 with open(csvpath,'r') as csvfile:
     csvreader=csv.reader(csvfile,delimiter=',')
