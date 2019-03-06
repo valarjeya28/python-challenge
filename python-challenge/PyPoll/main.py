@@ -11,9 +11,7 @@ poll={}
 
 #filepath
 csvpath=os.path.join('election_data.csv')
-   
-
-
+  
 #open file 
 
 with open(csvpath,'r') as csvfile:
@@ -33,31 +31,38 @@ with open(csvpath,'r') as csvfile:
        vote_count.append(value)
     #find percentage of votes
     for n in vote_count:
-      vote_percent.append(round((n/len(total_votes)*100),3))
-
+      percent = float(n/len(total_votes)*100)
+      vote_percent.append(round(percent,2))
+    
      #zips candidates,vote_percent and vote_count into tuples
     poll_data=list(zip(total_candidates,vote_percent,vote_count))
      
-     
-    
-    
       
     #find highest vote count winner
-    #for i in vote_count:
-     # if i >  i+1 :
-      #  print (f'{vote_percent[i]},{total_candidates[i]}') 
+    
     winner_List=[]
     for vote in poll_data:
        if max(vote_count) == vote[2]:
             winner_List.append(vote[0])
     winner=winner_List[0]    
-    print(winner)
-    print(f'Total votes :{len(total_votes)}')
+
+    #----------Election Results--------------------------
+    
+    print(f"Election Results")
+    print(f"---------------------------------------")
+    print(f"Total votes :{len(total_votes)}")
+    print(f"-----------------------------------------")
      #from poll data we are getting winner list
     for i in poll_data:
-      print(f'{i[0]} :{i[1]} % ({i[2]})')
+       print(f'{i[0]} :  {i[1]}%   ({i[2]})')
 
-    #winner
+    print(f"---------------------------------------")
+      #winner
+    print(f"Winner : {winner}")
+    print(f"---------------------------------------")
+    
+    
+    
     
     
     #print (f'{vote_percent[0]},{total_candidates[0]}') 
