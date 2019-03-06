@@ -1,4 +1,4 @@
-# python-challenge
+# Python-challenge
 #Create a new GitHub repo called python-challenge. Then, clone it to your computer.
 
 Inside your local git repository, create a directory for both of the  Python Challenges. Use folder names corresponding to the challenges: PyBank and  PyPoll.
