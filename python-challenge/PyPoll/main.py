@@ -25,7 +25,7 @@ with open(csvpath,'r') as csvfile:
           poll[row[2]]=poll[row[2]]+1
       else:
           poll[row[2]]=1
-          
+
     #create dictionary keys and values and add them to list
     for key,value in poll.items():
        total_candidates.append(key)
@@ -55,7 +55,7 @@ with open(csvpath,'r') as csvfile:
         txtfile.writelines('Election Results \n-------------------------\nTotal votes : '+str(len(total_votes))+
             '\n--------------------------------\n')
         for entry in poll_data:
-            txtfile.writelines(entry[0] + ": " + str(entry[2]) +'%  (' + str(entry[1]) + ')\n')
+            txtfile.writelines(entry[0] + ": " + str(entry[1]) +'%  (' + str(entry[2]) + ')\n')
         txtfile.writelines('------------------------- \nWinner: ' + winner + '\n-------------------------')
 
     with open(outputfile, 'r') as readfile:
