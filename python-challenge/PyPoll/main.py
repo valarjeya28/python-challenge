@@ -25,6 +25,7 @@ with open(csvpath,'r') as csvfile:
           poll[row[2]]=poll[row[2]]+1
       else:
           poll[row[2]]=1
+          
     #create dictionary keys and values and add them to list
     for key,value in poll.items():
        total_candidates.append(key)
@@ -60,7 +61,6 @@ with open(csvpath,'r') as csvfile:
     with open(outputfile, 'r') as readfile:
         print(readfile.read())
     
-    #print (f'{vote_percent[0]},{total_candidates[0]}') 
    
     
     
