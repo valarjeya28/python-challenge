@@ -47,23 +47,18 @@ with open(csvpath,'r') as csvfile:
     winner=winner_List[0]    
 
     #----------Election Results--------------------------
-    
-    print(f"Election Results")
-    print(f"---------------------------------------")
-    print(f"Total votes :{len(total_votes)}")
-    print(f"-----------------------------------------")
-     #from poll data we are getting winner list
-    for i in poll_data:
-       print(f'{i[0]} :  {i[1]}%   ({i[2]})')
+ 
 
-    print(f"---------------------------------------")
-      #winner
-    print(f"Winner : {winner}")
-    print(f"---------------------------------------")
-    
-    
-    
-    
+    outputfile= os.path.join("output.txt")
+    with open(outputfile,'w') as txtfile:
+        txtfile.writelines('Election Results \n-------------------------\nTotal votes : '+str(len(total_votes))+
+            '\n--------------------------------\n')
+        for entry in poll_data:
+            txtfile.writelines(entry[0] + ": " + str(entry[2]) +'%  (' + str(entry[1]) + ')\n')
+        txtfile.writelines('------------------------- \nWinner: ' + winner + '\n-------------------------')
+
+    with open(outputfile, 'r') as readfile:
+        print(readfile.read())
     
     #print (f'{vote_percent[0]},{total_candidates[0]}') 
    
